@@ -1,0 +1,18 @@
+.contactPage {
+  margin-top: 50px;
+}
+
+.contactPage .contactPage__Content {
+  width: 85%;
+  margin: auto;
+}
+
+.contactPage .contactPage__Content-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=ContactPage.module.css.map */

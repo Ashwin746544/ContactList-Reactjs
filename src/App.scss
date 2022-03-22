@@ -1,0 +1,20 @@
+.App {
+  // text-align: center;
+  margin: auto;
+  // padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  main {
+    flex-grow: 1;
+    header div {
+      height: 40px;
+      border-bottom: 2px solid grey;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  // .App {
+  //   max-width: 1320px;
+  // }
+}

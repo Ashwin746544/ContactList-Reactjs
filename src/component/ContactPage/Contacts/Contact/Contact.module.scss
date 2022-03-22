@@ -1,0 +1,27 @@
+.contact {
+  cursor: pointer;
+  td {
+    padding: 20px;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    .info__name-round {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #00ff49;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .info__details-name {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+}
+.contact:hover {
+  background-color: #e8ecef;
+}

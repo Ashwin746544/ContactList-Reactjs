@@ -1,0 +1,62 @@
+.Modal {
+  background-color: #e7cfcff2;
+  position: fixed;
+  top: 20%;
+  left: calc(50% - 250px);
+  padding: 20px;
+  width: 100%;
+  margin: auto;
+  max-width: 500px;
+  border-radius: 5px;
+  // transform: translateY(-100vh);
+  transition: transform 300ms ease-out;
+  z-index: 100;
+  // @keyframes ModalIn {
+  //   0% {
+  //     transform: translateY(-30%);
+  //   }
+  //   100% {
+  //     transform: translateY(0%);
+  //   }
+  // }
+  // @keyframes ModalOut {
+  //   0% {
+  //     transform: translateY(0%);
+  //   }
+  //   100% {
+  //     transform: translateY(-30%);
+  //   }
+  // }
+  h1,
+  button {
+    text-align: center;
+  }
+  .modal_actions {
+    text-align: center;
+    button {
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 0 5px;
+      color: black;
+    }
+    .Success {
+      background-color: lightgreen;
+      border: 1px solid green;
+    }
+    .Danger {
+      background-color: salmon;
+      border: 1px solid red;
+    }
+  }
+}
+.backdrop {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-color: #8080808f;
+  z-index: 50;
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACX,UAAU,EAAE,IAAI;CASjB;;AAVD,AAEE,YAFU,CAEV,qBAAqB,CAAC;EACpB,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;CACb;;AALH,AAME,YANU,CAMV,4BAA4B,CAAC;EAC3B,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;CAC/B",
+    "sources": [
+        "ContactPage.module.scss"
+    ],
+    "names": [],
+    "file": "ContactPage.module.css"
+}

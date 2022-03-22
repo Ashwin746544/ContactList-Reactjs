@@ -1,0 +1,44 @@
+.searchBar {
+  margin-bottom: 40px;
+}
+
+.searchBar input {
+  padding: 10px 10px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background-color: #d3d3d366;
+  width: calc(100% - 20px);
+}
+
+.searchBar button {
+  padding: 10px;
+  margin-left: 20px;
+  /* background: linear-gradient(to right, #d94a4a, transparent); */
+  background: -webkit-gradient(linear, left top, right top, from(#ff5000ba), to(#fa72aa));
+  background: linear-gradient(to right, #ff5000ba, #fa72aa);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.searchBar .searchInputContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
+}
+
+.searchBar .searchButton {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  background: none;
+}
+
+.searchBar .searchButton img {
+  width: 15px;
+}
+/*# sourceMappingURL=ContactPageSearchBar.module.css.map */

@@ -1,0 +1,39 @@
+.contactDetails {
+  background: #bdb6b647;
+  padding: 20px;
+  .details-top {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 50px;
+    .details-top-name_round {
+      font-size: 25px;
+      background-color: orange;
+      margin-bottom: 15px;
+      height: 80px;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+    .details-top-name {
+      font-size: 20px;
+      font-weight: 400;
+      font-weight: 500;
+    }
+  }
+  .details-bottom {
+    table {
+      margin: auto;
+      th {
+        color: lightgrey;
+      }
+      th,
+      td {
+        padding: 15px 30px;
+        text-align: start;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.contacts {
+  margin-right: 50px;
+  display: flex;
+  flex-flow: column;
+  // min-width: 600px;
+  width: 60%;
+  h1 {
+    text-align: center;
+  }
+  table thead tr {
+    background-color: lightgray;
+    th {
+      text-align: start;
+      padding: 20px;
+    }
+  }
+}

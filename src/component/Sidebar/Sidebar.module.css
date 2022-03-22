@@ -1,0 +1,14 @@
+.sideBar {
+  width: 70px;
+  height: 100vh;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff5000ba), to(#fa72aa));
+  background: linear-gradient(#ff5000ba, #fa72aa);
+  padding: 5px 0;
+}
+
+.sideBar .barsIconContainer {
+  margin-top: -15px;
+  margin-bottom: 60px;
+}
+/*# sourceMappingURL=Sidebar.module.css.map */

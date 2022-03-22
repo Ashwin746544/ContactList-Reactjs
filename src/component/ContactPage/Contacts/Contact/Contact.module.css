@@ -1,0 +1,43 @@
+.contact {
+  cursor: pointer;
+}
+
+.contact td {
+  padding: 20px;
+}
+
+.contact .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .info .info__name-round {
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #00ff49;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.contact .info .info__details-name {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.contact:hover {
+  background-color: #e8ecef;
+}
+/*# sourceMappingURL=Contact.module.css.map */

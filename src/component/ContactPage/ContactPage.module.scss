@@ -1,0 +1,11 @@
+.contactPage {
+  margin-top: 50px;
+  .contactPage__Content {
+    width: 85%;
+    margin: auto;
+  }
+  .contactPage__Content-bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+}

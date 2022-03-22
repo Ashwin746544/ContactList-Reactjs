@@ -1,0 +1,21 @@
+.Input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  label {
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  input {
+    margin-bottom: 3px;
+    border-radius: 5px;
+    padding: 8px;
+  }
+  .invalidInput {
+    border: 1px solid red;
+  }
+  small {
+    color: red;
+  }
+}

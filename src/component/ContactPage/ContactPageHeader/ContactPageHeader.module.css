@@ -1,0 +1,13 @@
+.contactHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px;
+  margin-top: 0;
+}
+
+.contactHeader .details {
+  text-align: start;
+  margin-left: 15px;
+}
+/*# sourceMappingURL=ContactPageHeader.module.css.map */
