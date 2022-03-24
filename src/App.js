@@ -6,6 +6,7 @@ import ContactPage from './component/ContactPage/ContactPage';
 function App() {
   return (
     <div className="App">
+      <div id="enjectModal"></div>
       <SideBar />
       <main>
         <header>

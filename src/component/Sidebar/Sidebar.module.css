@@ -1,9 +1,9 @@
 .sideBar {
-  width: 70px;
-  height: 100vh;
+  width: 65px;
+  min-height: 100vh;
   text-align: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff5000ba), to(#fa72aa));
-  background: linear-gradient(#ff5000ba, #fa72aa);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8767), to(#fe67a3));
+  background: linear-gradient(180deg, #ff8767, #fe67a3);
   padding: 5px 0;
 }
 

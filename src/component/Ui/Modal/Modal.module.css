@@ -1,7 +1,7 @@
 .Modal {
   background-color: #e7cfcff2;
   position: fixed;
-  top: 20%;
+  top: 10%;
   left: calc(50% - 250px);
   padding: 20px;
   width: 100%;

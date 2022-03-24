@@ -6,13 +6,13 @@
     outline: none;
     border: none;
     background-color: #d3d3d366;
-    width: calc(100% - 20px);
+    width: 100%;
   }
   button {
     padding: 10px;
     margin-left: 20px;
     /* background: linear-gradient(to right, #d94a4a, transparent); */
-    background: linear-gradient(to right, #ff5000ba, #fa72aa);
+    background: linear-gradient(45deg, #ff8767, #fe67a3);
     border: none;
     border-radius: 5px;
     color: white;
@@ -23,12 +23,13 @@
     position: relative;
     display: inline-block;
     width: 100%;
-    max-width: 250px;
+    max-width: 400px;
   }
   .searchButton {
     position: absolute;
     right: 10px;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     img {
       width: 15px;

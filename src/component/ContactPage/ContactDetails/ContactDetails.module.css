@@ -1,6 +1,8 @@
 .contactDetails {
-  background: #bdb6b647;
-  padding: 20px;
+  background: #f1f1f1;
+  padding: 30px;
+  width: 35%;
+  word-break: break-word;
 }
 
 .contactDetails .details-top {
@@ -46,12 +48,22 @@
 }
 
 .contactDetails .details-bottom table th {
-  color: lightgrey;
+  color: #a9a4a4;
+  min-width: 150px;
 }
 
 .contactDetails .details-bottom table th,
 .contactDetails .details-bottom table td {
-  padding: 15px 30px;
+  padding: 10px 5px;
   text-align: start;
+  vertical-align: top;
+}
+
+@media (max-width: 1400px) {
+  .contactDetails {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
 }
 /*# sourceMappingURL=ContactDetails.module.css.map */

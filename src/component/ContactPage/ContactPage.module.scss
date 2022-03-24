@@ -9,3 +9,12 @@
     justify-content: space-between;
   }
 }
+
+@media (max-width: 1400px) {
+  .contactPage {
+    .contactPage__Content-bottom {
+      flex-direction: column;
+      grid-gap: 30px;
+    }
+  }
+}

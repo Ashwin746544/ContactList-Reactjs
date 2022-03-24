@@ -6,6 +6,8 @@ import ContactDetails from './ContactDetails/ContactDetails';
 import React, { useState, useEffect } from 'react';
 import Modal from '../Ui/Modal/Modal';
 import ContactContex from '../../ContactContex';
+import md5 from 'md5';
+// import GenericModal from '../Ui/GenericModal/GenericModal';
 
 const ContactPage = (props) => {
 
@@ -14,27 +16,42 @@ const ContactPage = (props) => {
   const [editId, setEditId] = useState('');
   const [viewId, setViewId] = useState("");
   const [selectedDeleteIds, setSelectedDeleteIds] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [searchedContactsArray, setSearchedContactsArray] = useState([]);
 
-  // window.addEventListener("unload", () => {
-  //   localStorage.setItem("contacts", JSON.stringify(ContactsArray));
-  // });
-  // window.addEventListener("load", () => {
-  //   const contacts = JSON.parse(localStorage.getItem("contacts"));
-  //   console.log("contacts from LocalStorage", contacts);
-  // });
   useEffect(() => {
     const contacts = JSON.parse(localStorage.getItem("contacts"));
     console.log("getting Contacts in Localstorage..", contacts);
     setContactsArray(contacts);
-  }, [])
+  }, []);
+
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(ContactsArray));
     console.log("setting Contacts in Localstorage..");
   }, [ContactsArray]);
 
+  useEffect(() => {
+    if (searchText !== "") {
+      let searchedContactsArray = ContactsArray.filter(contact => {
+        if (contact.name.toLocaleLowerCase().includes(searchText) || contact.email.toLocaleLowerCase().includes(searchText) || contact.company.toLocaleLowerCase().includes(searchText)) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      setSearchedContactsArray(searchedContactsArray);
+      console.log("SearchedContactArray:  ", searchedContactsArray);
+    }
+  }, [searchText, ContactsArray]);
+
   let selectedContact = null;
   if (editId != '') {
     selectedContact = ContactsArray.find(contact => contact.id == editId);
+  }
+
+  const searchTextChangedHandler = (text) => {
+    console.log("SearchText is::" + text);
+    setSearchText(text.trim().toLocaleLowerCase());
   }
 
   const deleteIdsHandler = (event, id, action) => {
@@ -82,9 +99,11 @@ const ContactPage = (props) => {
     for (let word of contactInfo.name.split(" ")) {
       shortName += word[0].toString();
     }
+    const bgColor = "#" + md5(contactInfo.name).slice(0, 6);
+
     const id = contactInfo.name + " " + contactInfo.phone;
     const contacts = [...ContactsArray];
-    contacts.push({ ...contactInfo, id: id, shortName: shortName.toLocaleUpperCase() });
+    contacts.push({ ...contactInfo, id: id, shortName: shortName.toLocaleUpperCase(), bgColor: bgColor });
     setContactsArray(contacts);
   }
 
@@ -94,11 +113,12 @@ const ContactPage = (props) => {
     for (let word of updatedInfo.name.split(" ")) {
       shortName += word[0].toString();
     }
+    const bgColor = "#" + md5(updatedInfo.name).slice(0, 6);
     const contacts = [...ContactsArray];
     const newId = updatedInfo.name + " " + updatedInfo.phone;
     const updatedArray = contacts.map(contact => {
       if (contact.id == id) {
-        return { ...updatedInfo, id: newId, shortName: shortName.toLocaleUpperCase() }
+        return { ...updatedInfo, id: newId, shortName: shortName.toLocaleUpperCase(), bgColor: bgColor }
       } else {
         return contact;
       }
@@ -109,8 +129,9 @@ const ContactPage = (props) => {
     setContactsArray(updatedArray);
   }
 
-  const deleteContactHandler = (event, id) => {
-    event.stopPropagation();
+  // const deleteContactHandler = (event, id) => {
+  const deleteContactHandler = (id) => {
+    // event.stopPropagation();
     console.log("delete contact...");
     const contacts = [...ContactsArray].filter(contact => contact.id !== id);
     if (viewId == id) {
@@ -125,8 +146,11 @@ const ContactPage = (props) => {
     setContactsArray(contacts);
   }
   console.log("selected DeleteIds", selectedDeleteIds);
-
+  console.log("SearchedTextArray ::::::", searchedContactsArray);
   return <ContactContex.Provider value={{ contactDeleted: deleteContactHandler }}>
+    {/* <GenericModal>
+      <h1>hello World</h1>
+    </GenericModal> */}
     <Modal
       show={modalState.show}
       type={modalState.type}
@@ -138,9 +162,13 @@ const ContactPage = (props) => {
     <div className={classes.contactPage}>
       <ContactPageHeader />
       <div className={classes.contactPage__Content}>
-        <ContactPageSearchBar clicked={modalHandler} showDeleteButton={selectedDeleteIds.length > 1} deleteSelectedContact={deleteSelectedContacts} />
+        <ContactPageSearchBar
+          clicked={modalHandler}
+          showDeleteButton={selectedDeleteIds.length > 1}
+          deleteSelectedContact={deleteSelectedContacts}
+          searchTextChanged={searchTextChangedHandler} />
         <div className={classes["contactPage__Content-bottom"]}>
-          <Contacts contacts={ContactsArray} modalOpened={modalHandler} viewAdded={viewIdHandler} deleteIdsHandler={deleteIdsHandler} />
+          <Contacts contacts={searchText == "" ? ContactsArray : searchedContactsArray} modalOpened={modalHandler} viewAdded={viewIdHandler} deleteIdsHandler={deleteIdsHandler} />
           {viewId && <ContactDetails contact={getContactById(viewId)} />}
         </div>
       </div>

@@ -28,6 +28,8 @@
       -ms-flex-align: center;
           align-items: center;
   background-color: #00ff49;
+  color: white;
+  font-weight: bold;
   margin-right: 10px;
   border-radius: 50%;
 }

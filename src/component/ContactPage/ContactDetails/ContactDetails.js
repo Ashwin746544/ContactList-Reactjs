@@ -4,7 +4,7 @@ const ContactDetails = (props) => {
   return (
     <div className={classes.contactDetails}>
       <div className={classes["details-top"]}>
-        <div className={classes["details-top-name_round"]}>{props.contact.shortName}</div>
+        <div className={classes["details-top-name_round"]} style={{ backgroundColor: props.contact.bgColor }}>{props.contact.shortName}</div>
         <p className={classes["details-top-name"]}>{props.contact.name}</p>
         <p className={classes["details-top-role"]}>{props.contact.role + " @ " + props.contact.company} </p>
       </div>

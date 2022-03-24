@@ -1,12 +1,24 @@
-.icon-container {
-  padding: 5px;
-  margin: 15px 0;
+.icon-container,
+.btn-container {
+  padding: 15px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  background-color: inherit;
   cursor: pointer;
 }
 
-.icon-container img {
-  width: 20px;
-  height: 20px;
+.icon-container img,
+.btn-container img {
+  width: 30px;
   vertical-align: top;
+  text-align: center;
+}
+
+.active {
+  border-left: 3px solid white;
+}
+
+.icon-container:hover {
+  background-color: #00000057;
 }
 /*# sourceMappingURL=Icon.module.css.map */

@@ -15,8 +15,21 @@ const Modal = (props) => {
   let addressRef = useRef();
   let formRef = useRef();
 
+  const [nameState, SetNameState] = useState({ value: "", isvalid: true, errorMessage: "name should be more than 5 Character long!" });
+  const [emailState, SetEmailState] = useState({ value: "", isvalid: true, errorMessage: "email is not valid!" });
+  const [phoneState, SetPhoneState] = useState({ value: "", isvalid: true, errorMessage: "phone No. is not valid!" });
+  const [companyState, SetCompanyState] = useState({ value: "", isvalid: true, errorMessage: "company name should be more than 5 character long!" });
+  const [roleState, SetRoleState] = useState({ value: "", isvalid: true, errorMessage: "role should be more than 5 Character long!" });
+  const [addressState, SetAddressState] = useState({ value: "", isvalid: true, errorMessage: "address should be more than 20 Character long!" });
+
   useEffect(() => {
     console.log("useEffect " + props.type);
+    SetNameState({ ...nameState, isvalid: true });
+    SetEmailState({ ...emailState, isvalid: true });
+    SetPhoneState({ ...phoneState, isvalid: true });
+    SetCompanyState({ ...companyState, isvalid: true });
+    SetRoleState({ ...roleState, isvalid: true });
+    SetAddressState({ ...addressState, isvalid: true });
     if (props.type == "edit") {
       console.log("inside useEffect");
       nameRef.current.value = props.selectedContact.name;
@@ -30,12 +43,6 @@ const Modal = (props) => {
     }
   }, [props.show]);
 
-  const [nameState, SetNameState] = useState({ value: "", isvalid: true, errorMessage: "name should be more than 5 Character long!" });
-  const [emailState, SetEmailState] = useState({ value: "", isvalid: true, errorMessage: "email is not valid!" });
-  const [phoneState, SetPhoneState] = useState({ value: "", isvalid: true, errorMessage: "phone No. is not valid!" });
-  const [companyState, SetCompanyState] = useState({ value: "", isvalid: true, errorMessage: "company name should be more than 5 character long!" });
-  const [roleState, SetRoleState] = useState({ value: "", isvalid: true, errorMessage: "role should be more than 5 Character long!" });
-  const [addressState, SetAddressState] = useState({ value: "", isvalid: true, errorMessage: "address should be more than 20 Character long!" });
   // const [formIsValid, setFormIsvalid] = useState(true);
   console.log("modal rendered! " + nameState.isvalid + " " + nameState.value);
 
@@ -76,10 +83,7 @@ const Modal = (props) => {
   }
 
   const InputStateHandler = (inputValidity, value, stateName, stateMethod) => {
-    // const isInputValid = checkValidity(inputName, value);
-    // setFormIsvalid(formIsValid && isInputValid);
     stateMethod({ ...stateName, value: value, isvalid: inputValidity });
-    // console.log("validating " + inputName + " " + stateName.isvalid);
   }
 
   const checkValidity = (input, value) => {
@@ -106,7 +110,7 @@ const Modal = (props) => {
         }
         return false;
       case "address":
-        if (/^[a-zA-Z0-9 \-]{20,}$/.test(value)) {
+        if (/^[a-zA-Z0-9 \.,\-]{20,}$/.test(value)) {
           return true;
         }
         return false;
@@ -119,7 +123,7 @@ const Modal = (props) => {
     <>
       <div className={classes.backdrop}
         style={{ display: props.show ? "block" : "none" }}
-        onClick={(event) => props.modalCancelled(event, false, props.type)}></div>
+        onClick={(event) => props.modalCancelled(event, false, "add")}></div>
       <div className={classes.Modal}
         style={{ transform: props.show ? "translateY(0)" : "translateY(-100vh)" }}>
         <h1>{props.type == "add" ? "Enter " : "Update "}Contact Data</h1>
