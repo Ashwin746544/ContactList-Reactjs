@@ -6,13 +6,18 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   max-width: calc(100vw - 40px);
   width: 60%;
 }
 
 .contacts h1 {
   text-align: center;
+}
+
+.contacts table {
+  border: 1px solid lightgray;
 }
 
 .contacts table thead tr {

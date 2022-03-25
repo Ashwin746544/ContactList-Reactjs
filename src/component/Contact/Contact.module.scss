@@ -1,7 +1,11 @@
 .contact {
+  border-bottom: 2px solid lightgray;
   cursor: pointer;
   td {
     padding: 10px;
+  }
+  td:first-child {
+    text-align: center;
   }
   .info {
     display: flex;

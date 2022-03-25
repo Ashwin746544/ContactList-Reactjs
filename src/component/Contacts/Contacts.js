@@ -25,7 +25,7 @@ const Contacts = (props) => {
         </tbody>}
 
       </table>
-      {props.contacts.length == 0 && <h1>No Contacts Available!</h1>}
+      {props.contacts.length == 0 && <h1 style={{ border: "1px solid lightgrey" }}>No Contacts Available!</h1>}
     </div>
   );
 }

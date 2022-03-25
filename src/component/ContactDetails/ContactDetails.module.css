@@ -59,6 +59,10 @@
   vertical-align: top;
 }
 
+.contactDetails .details-bottom table tr {
+  border-bottom: 1px solid lightgray;
+}
+
 @media (max-width: 1400px) {
   .contactDetails {
     width: 70%;

@@ -6,6 +6,11 @@
   margin-top: 0;
 }
 
+.contactHeader p {
+  font-weight: 500;
+  color: gray;
+}
+
 .contactHeader .details {
   text-align: start;
   margin-left: 15px;

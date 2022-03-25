@@ -1,22 +1,56 @@
 .Modal {
   background-color: #e7cfcff2;
   position: fixed;
-  top: 50%;
+  top: 0;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   padding: 20px;
   width: 500px;
   margin: auto;
   max-width: calc(100% - 20px);
   border-radius: 5px;
-  -webkit-transition: -webkit-transform 300ms ease-out;
-  transition: -webkit-transform 300ms ease-out;
-  transition: transform 300ms ease-out;
-  transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
   z-index: 100;
   max-height: calc(100% - 20px);
   overflow: auto;
+  -webkit-animation: ModalIn 300ms ease-out forwards;
+          animation: ModalIn 300ms ease-out forwards;
+}
+
+@-webkit-keyframes ModalIn {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+@keyframes ModalIn {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 50px;
+  }
+}
+
+@-webkit-keyframes ModalOut {
+  0% {
+    top: 50px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes ModalOut {
+  0% {
+    top: 50px;
+  }
+  100% {
+    top: 0;
+  }
 }
 
 .Modal h1,

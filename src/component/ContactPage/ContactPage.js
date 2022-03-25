@@ -18,17 +18,18 @@ const ContactPage = (props) => {
   const [searchText, setSearchText] = useState("");
   const [searchedContactsArray, setSearchedContactsArray] = useState([]);
 
+  //getting data from localhost
   useEffect(() => {
     const contacts = JSON.parse(localStorage.getItem("contacts"));
-    console.log("getting Contacts in Localstorage..", contacts);
     setContactsArray(contacts);
   }, []);
 
+  //setting data in localhost
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(ContactsArray));
-    console.log("setting Contacts in Localstorage..");
   }, [ContactsArray]);
 
+  //managing search result
   useEffect(() => {
     if (searchText !== "") {
       let searchedContactsArray = ContactsArray.filter(contact => {
@@ -43,9 +44,32 @@ const ContactPage = (props) => {
     }
   }, [searchText, ContactsArray]);
 
+  //EditContact
   let selectedContact = null;
   if (editId != '') {
     selectedContact = ContactsArray.find(contact => contact.id == editId);
+  }
+
+  const editContactHandler = (id, updatedInfo) => {
+    console.log("editing contact...");
+    let shortName = "";
+    for (let word of updatedInfo.name.split(" ")) {
+      shortName += word[0].toString();
+    }
+    const bgColor = "#" + md5(updatedInfo.name).slice(0, 6);
+    const contacts = [...ContactsArray];
+    const newId = updatedInfo.name + " " + updatedInfo.phone;
+    const updatedArray = contacts.map(contact => {
+      if (contact.id == id) {
+        return { ...updatedInfo, id: newId, shortName: shortName.toLocaleUpperCase(), bgColor: bgColor }
+      } else {
+        return contact;
+      }
+    });
+    if (viewId != "") {
+      setViewId(newId);
+    }
+    setContactsArray(updatedArray);
   }
 
   const searchTextChangedHandler = (text) => {
@@ -99,33 +123,10 @@ const ContactPage = (props) => {
       shortName += word[0].toString();
     }
     const bgColor = "#" + md5(contactInfo.name).slice(0, 6);
-
     const id = contactInfo.name + " " + contactInfo.phone;
     const contacts = [...ContactsArray];
     contacts.push({ ...contactInfo, id: id, shortName: shortName.toLocaleUpperCase(), bgColor: bgColor });
     setContactsArray(contacts);
-  }
-
-  const editContactHandler = (id, updatedInfo) => {
-    console.log("editing contact...");
-    let shortName = "";
-    for (let word of updatedInfo.name.split(" ")) {
-      shortName += word[0].toString();
-    }
-    const bgColor = "#" + md5(updatedInfo.name).slice(0, 6);
-    const contacts = [...ContactsArray];
-    const newId = updatedInfo.name + " " + updatedInfo.phone;
-    const updatedArray = contacts.map(contact => {
-      if (contact.id == id) {
-        return { ...updatedInfo, id: newId, shortName: shortName.toLocaleUpperCase(), bgColor: bgColor }
-      } else {
-        return contact;
-      }
-    });
-    if (viewId != "") {
-      setViewId(newId);
-    }
-    setContactsArray(updatedArray);
   }
 
   const deleteContactHandler = (id) => {

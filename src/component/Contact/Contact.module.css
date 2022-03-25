@@ -1,9 +1,14 @@
 .contact {
+  border-bottom: 2px solid lightgray;
   cursor: pointer;
 }
 
 .contact td {
   padding: 10px;
+}
+
+.contact td:first-child {
+  text-align: center;
 }
 
 .contact .info {

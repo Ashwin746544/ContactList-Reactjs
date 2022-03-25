@@ -17,7 +17,7 @@ const SideBar = (props) => {
       </div>
       <div>
         <Icon source={homeIcon} />
-        <Icon source={userIcon} />
+        <Icon source={userIcon} ownStyle={{ borderLeft: "5px solid white" }} />
         <Icon source={clipboardIcon} />
         <Icon source={chartIcon} />
         <Icon source={databaseIcon} />

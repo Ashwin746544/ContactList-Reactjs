@@ -11,6 +11,14 @@
     background-color: #d3d3d366;
     width: 100%;
   }
+  .deleteBtn {
+    display: flex;
+    align-items: center;
+    img {
+      height: 21px;
+      margin-right: 5px;
+    }
+  }
   button,
   .contactsActionBtn {
     padding: 10px;
@@ -22,6 +30,9 @@
     color: white;
     font-weight: bold;
     cursor: pointer;
+  }
+  .contactsActionBtn {
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 75%);
   }
   .searchInputContainer {
     position: relative;

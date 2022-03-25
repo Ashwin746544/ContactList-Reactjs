@@ -57,12 +57,12 @@ const Modal = (props) => {
     const roleIsValid = checkValidity('role', role);
     const addressIsValid = checkValidity('address', address);
 
-    InputStateHandler(nameIsValid, name, nameState, SetNameState);
-    InputStateHandler(emailIsValid, email, emailState, SetEmailState);
-    InputStateHandler(phoneIsValid, phone, phoneState, SetPhoneState);
-    InputStateHandler(companyIsValid, company, companyState, SetCompanyState);
-    InputStateHandler(roleIsValid, role, roleState, SetRoleState);
-    InputStateHandler(addressIsValid, address, addressState, SetAddressState);
+    SetNameState({ ...nameState, value: name, isvalid: nameIsValid });
+    SetEmailState({ ...emailState, value: email, isvalid: emailIsValid });
+    SetPhoneState({ ...phoneState, value: phone, isvalid: emailIsValid });
+    SetCompanyState({ ...companyState, value: company, isvalid: emailIsValid });
+    SetRoleState({ ...roleState, value: role, isvalid: emailIsValid });
+    SetAddressState({ ...addressState, value: address, isvalid: emailIsValid });
 
     if (!nameIsValid || !emailIsValid || !phoneIsValid || !companyIsValid || !roleIsValid || !addressIsValid) {
       return;
@@ -76,10 +76,6 @@ const Modal = (props) => {
       props.modalCancelled(event, false, "add", "");
       formRef.current.reset();
     }
-  }
-
-  const InputStateHandler = (inputValidity, value, stateName, stateMethod) => {
-    stateMethod({ ...stateName, value: value, isvalid: inputValidity });
   }
 
   const checkValidity = (input, value) => {

@@ -49,8 +49,8 @@ const Contact = (props) => {
         </div>
       </td>
       <td>{props.contact.company}</td>
-      <td><button onClick={(event) => props.modalOpened(event, true, "edit", props.contact.id)} ><img src={editIcon} /></button></td>
-      <td><button onClick={(event) => openModalHandler(event)} ><img src={deleteIcon} /></button></td>
+      <td><button onClick={(event) => props.modalOpened(event, true, "edit", props.contact.id)} ><img src={editIcon} alt="Edit" /></button></td>
+      <td><button onClick={(event) => openModalHandler(event)} ><img src={deleteIcon} alt="Delete" /></button></td>
     </tr></>;
 }
 

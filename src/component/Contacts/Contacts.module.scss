@@ -2,11 +2,15 @@
   // margin-right: 50px;
   display: flex;
   flex-flow: column;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   max-width: calc(100vw - 40px);
   width: 60%;
   h1 {
     text-align: center;
+  }
+  table {
+    border: 1px solid lightgray;
   }
   table thead tr {
     background-color: lightgray;
