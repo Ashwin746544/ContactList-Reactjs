@@ -1,13 +1,8 @@
-import GenericModal from '../../Ui/GenericModal/GenericModal';
-import Modal from '../../Ui/Modal/Modal';
-import Contact from './Contact/Contact';
+import Contact from '../Contact/Contact';
 import classes from './Contacts.module.css';
 
 const Contacts = (props) => {
-  // const contacts = [{
-  //   name: "Ashwin Chaus"
-  // }];
-  console.log(props.contacts);
+
   const Contacts = props.contacts.map(contact => <Contact
     modalOpened={props.modalOpened}
     key={contact.name + " " + contact.phone}
@@ -16,7 +11,6 @@ const Contacts = (props) => {
   />);
   return (
     <div className={classes.contacts}>
-      {/* <GenericModal></GenericModal> */}
       <table>
         <thead>
           <tr>

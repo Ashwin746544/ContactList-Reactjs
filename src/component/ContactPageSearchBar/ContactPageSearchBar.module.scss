@@ -1,5 +1,8 @@
 .searchBar {
   margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 20px;
   input {
     padding: 10px 10px;
     border-radius: 20px;
@@ -8,9 +11,10 @@
     background-color: #d3d3d366;
     width: 100%;
   }
-  button {
+  button,
+  .contactsActionBtn {
     padding: 10px;
-    margin-left: 20px;
+    // margin-left: 20px;
     /* background: linear-gradient(to right, #d94a4a, transparent); */
     background: linear-gradient(45deg, #ff8767, #fe67a3);
     border: none;
@@ -34,5 +38,16 @@
     img {
       width: 15px;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    .searchInputContainer {
+      max-width: 100%;
+    }
+  }
+  .contactsActionBtn {
+    width: 100%;
   }
 }

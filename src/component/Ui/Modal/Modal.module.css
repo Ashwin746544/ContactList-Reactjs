@@ -1,18 +1,22 @@
 .Modal {
   background-color: #e7cfcff2;
   position: fixed;
-  top: 10%;
-  left: calc(50% - 250px);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   padding: 20px;
-  width: 100%;
+  width: 500px;
   margin: auto;
-  max-width: 500px;
+  max-width: calc(100% - 20px);
   border-radius: 5px;
   -webkit-transition: -webkit-transform 300ms ease-out;
   transition: -webkit-transform 300ms ease-out;
   transition: transform 300ms ease-out;
   transition: transform 300ms ease-out, -webkit-transform 300ms ease-out;
   z-index: 100;
+  max-height: calc(100% - 20px);
+  overflow: auto;
 }
 
 .Modal h1,
@@ -48,7 +52,8 @@
   width: 100%;
   left: 0;
   top: 0;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background-color: #8080808f;
   z-index: 50;
 }

@@ -2,7 +2,8 @@
   // margin-right: 50px;
   display: flex;
   flex-flow: column;
-  // min-width: 600px;
+  overflow: auto;
+  max-width: calc(100vw - 40px);
   width: 60%;
   h1 {
     text-align: center;
@@ -11,7 +12,7 @@
     background-color: lightgray;
     th {
       text-align: start;
-      padding: 20px;
+      padding: 10px;
     }
   }
 }

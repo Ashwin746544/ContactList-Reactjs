@@ -1,7 +1,7 @@
 .contact {
   cursor: pointer;
   td {
-    padding: 20px;
+    padding: 10px;
   }
   .info {
     display: flex;
@@ -21,6 +21,15 @@
     .info__details-name {
       font-weight: 500;
       font-size: 20px;
+    }
+  }
+  button {
+    border: none;
+    padding: 5px;
+    background: inherit;
+    cursor: pointer;
+    img {
+      width: 25px;
     }
   }
 }

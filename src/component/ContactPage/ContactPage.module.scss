@@ -7,6 +7,7 @@
   .contactPage__Content-bottom {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
   }
 }
 
@@ -15,6 +16,15 @@
     .contactPage__Content-bottom {
       flex-direction: column;
       grid-gap: 30px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .contactPage {
+    .contactPage__Content {
+      width: 100%;
+      padding: 0 20px;
     }
   }
 }

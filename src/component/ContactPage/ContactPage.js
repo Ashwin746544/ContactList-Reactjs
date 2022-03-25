@@ -1,13 +1,12 @@
 import classes from './ContactPage.module.css';
-import ContactPageHeader from './ContactPageHeader/ContactPageHeader';
-import ContactPageSearchBar from './ContactPageSearchBar/ContactPageSearchBar';
-import Contacts from './Contacts/Contacts';
-import ContactDetails from './ContactDetails/ContactDetails';
+import ContactPageHeader from '../ContactPageHeader/ContactPageHeader';
+import ContactPageSearchBar from '../ContactPageSearchBar/ContactPageSearchBar';
+import Contacts from '../Contacts/Contacts';
+import ContactDetails from '../ContactDetails/ContactDetails';
 import React, { useState, useEffect } from 'react';
 import Modal from '../Ui/Modal/Modal';
 import ContactContex from '../../ContactContex';
 import md5 from 'md5';
-// import GenericModal from '../Ui/GenericModal/GenericModal';
 
 const ContactPage = (props) => {
 
@@ -129,9 +128,7 @@ const ContactPage = (props) => {
     setContactsArray(updatedArray);
   }
 
-  // const deleteContactHandler = (event, id) => {
   const deleteContactHandler = (id) => {
-    // event.stopPropagation();
     console.log("delete contact...");
     const contacts = [...ContactsArray].filter(contact => contact.id !== id);
     if (viewId == id) {
@@ -145,12 +142,8 @@ const ContactPage = (props) => {
     }
     setContactsArray(contacts);
   }
-  console.log("selected DeleteIds", selectedDeleteIds);
-  console.log("SearchedTextArray ::::::", searchedContactsArray);
+
   return <ContactContex.Provider value={{ contactDeleted: deleteContactHandler }}>
-    {/* <GenericModal>
-      <h1>hello World</h1>
-    </GenericModal> */}
     <Modal
       show={modalState.show}
       type={modalState.type}

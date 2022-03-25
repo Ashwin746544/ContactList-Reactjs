@@ -3,7 +3,7 @@
 }
 
 .contact td {
-  padding: 20px;
+  padding: 10px;
 }
 
 .contact .info {
@@ -37,6 +37,17 @@
 .contact .info .info__details-name {
   font-weight: 500;
   font-size: 20px;
+}
+
+.contact button {
+  border: none;
+  padding: 5px;
+  background: inherit;
+  cursor: pointer;
+}
+
+.contact button img {
+  width: 25px;
 }
 
 .contact:hover {

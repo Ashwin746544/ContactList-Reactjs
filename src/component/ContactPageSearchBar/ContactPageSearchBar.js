@@ -1,8 +1,6 @@
-import Icon from '../../Ui/Icon/Icon';
 import classes from './ContactPageSearchBar.module.css';
-import searchIcon from '../../../assets/search.svg';
-import deleteIcon from '../../../assets/delete.svg';
-import GenericModal from '../../Ui/GenericModal/GenericModal';
+import searchIcon from '../../assets/search.svg';
+import GenericModal from '../Ui/GenericModal/GenericModal';
 import { useState } from 'react';
 
 const ContactPageSearchBar = (props) => {
@@ -27,8 +25,8 @@ const ContactPageSearchBar = (props) => {
           <input type='text' name="search" placeholder="Search contacts" onChange={(event) => props.searchTextChanged(event.target.value)} />
           <button className={classes.searchButton}><img src={searchIcon} /></button>
         </div>
-        <button onClick={(event) => props.clicked(event, true, 'add', "")}><span>+ </span>Add Contact</button>
-        {props.showDeleteButton && <button onClick={openModalHandler}>Delete All</button>}
+        <button className={classes.contactsActionBtn} onClick={(event) => props.clicked(event, true, 'add', "")}><span>+ </span>Add Contact</button>
+        {props.showDeleteButton && <button className={classes.contactsActionBtn} onClick={openModalHandler}>Delete All</button>}
       </div>
     </>
   );

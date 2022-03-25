@@ -11,4 +11,10 @@
   margin-top: -15px;
   margin-bottom: 60px;
 }
+
+@media (max-width: 768px) {
+  .sideBar {
+    display: none;
+  }
+}
 /*# sourceMappingURL=Sidebar.module.css.map */

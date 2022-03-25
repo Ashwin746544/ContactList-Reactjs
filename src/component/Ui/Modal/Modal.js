@@ -4,9 +4,6 @@ import { useState, useRef, useEffect } from 'react';
 
 const Modal = (props) => {
 
-
-  console.log("selectedContact ", props.selectedContact);
-
   let nameRef = useRef();
   let emailRef = useRef();
   let phoneRef = useRef();
@@ -43,9 +40,6 @@ const Modal = (props) => {
     }
   }, [props.show]);
 
-  // const [formIsValid, setFormIsvalid] = useState(true);
-  console.log("modal rendered! " + nameState.isvalid + " " + nameState.value);
-
   const submitHandler = (event) => {
     console.log("formRef", formRef);
     event.preventDefault();
@@ -55,19 +49,21 @@ const Modal = (props) => {
     const company = companyRef.current.value.trim();
     const role = roleRef.current.value.trim();
     const address = addressRef.current.value.trim();
+
     const nameIsValid = checkValidity('name', name);
     const emailIsValid = checkValidity('email', email);
     const phoneIsValid = checkValidity('phone', phone);
     const companyIsValid = checkValidity('company', company);
     const roleIsValid = checkValidity('role', role);
     const addressIsValid = checkValidity('address', address);
+
     InputStateHandler(nameIsValid, name, nameState, SetNameState);
     InputStateHandler(emailIsValid, email, emailState, SetEmailState);
     InputStateHandler(phoneIsValid, phone, phoneState, SetPhoneState);
     InputStateHandler(companyIsValid, company, companyState, SetCompanyState);
     InputStateHandler(roleIsValid, role, roleState, SetRoleState);
     InputStateHandler(addressIsValid, address, addressState, SetAddressState);
-    console.log("submitted");
+
     if (!nameIsValid || !emailIsValid || !phoneIsValid || !companyIsValid || !roleIsValid || !addressIsValid) {
       return;
     } else {
@@ -125,7 +121,8 @@ const Modal = (props) => {
         style={{ display: props.show ? "block" : "none" }}
         onClick={(event) => props.modalCancelled(event, false, "add")}></div>
       <div className={classes.Modal}
-        style={{ transform: props.show ? "translateY(0)" : "translateY(-100vh)" }}>
+        // style={{ transform: props.show ? "translateY(0)" : "translateY(-100vh)" }}>
+        style={{ display: props.show ? "block" : "none" }}>
         <h1>{props.type == "add" ? "Enter " : "Update "}Contact Data</h1>
         <form onSubmit={submitHandler} ref={formRef}>
           <Input inpType="text" label="name" placeHolder="Enter Fullname" errorMessage={nameState.errorMessage} valid={nameState.isvalid} ref={nameRef} />

@@ -1,11 +1,9 @@
-import Icon from '../../../Ui/Icon/Icon';
 import classes from './Contact.module.css';
-import editIcon from '../../../../assets/edit.svg';
-import deleteIcon from '../../../../assets/delete.svg';
+import editIcon from '../../assets/edit.svg';
+import deleteIcon from '../../assets/delete.svg';
 import { useContext, useState } from 'react';
-import ReactDOM from 'react-dom';
-import ContactContex from '../../../../ContactContex';
-import GenericModal from '../../../Ui/GenericModal/GenericModal';
+import ContactContex from '../../ContactContex';
+import GenericModal from '../Ui/GenericModal/GenericModal';
 
 const Contact = (props) => {
 
@@ -51,9 +49,8 @@ const Contact = (props) => {
         </div>
       </td>
       <td>{props.contact.company}</td>
-      <td><Icon isButton source={editIcon} clicked={(event) => props.modalOpened(event, true, "edit", props.contact.id)} /></td>
-      {/* <td><Icon source={editIcon} /></td> */}
-      <td><Icon isButton source={deleteIcon} clicked={(event) => openModalHandler(event)} /></td>
+      <td><button onClick={(event) => props.modalOpened(event, true, "edit", props.contact.id)} ><img src={editIcon} /></button></td>
+      <td><button onClick={(event) => openModalHandler(event)} ><img src={deleteIcon} /></button></td>
     </tr></>;
 }
 

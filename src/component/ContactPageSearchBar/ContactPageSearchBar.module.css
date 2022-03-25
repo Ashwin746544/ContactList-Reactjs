@@ -1,5 +1,11 @@
 .searchBar {
   margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  grid-gap: 20px;
 }
 
 .searchBar input {
@@ -11,9 +17,9 @@
   width: 100%;
 }
 
-.searchBar button {
+.searchBar button,
+.searchBar .contactsActionBtn {
   padding: 10px;
-  margin-left: 20px;
   /* background: linear-gradient(to right, #d94a4a, transparent); */
   background: linear-gradient(45deg, #ff8767, #fe67a3);
   border: none;
@@ -41,5 +47,14 @@
 
 .searchBar .searchButton img {
   width: 15px;
+}
+
+@media (max-width: 768px) {
+  .searchBar .searchInputContainer {
+    max-width: 100%;
+  }
+  .contactsActionBtn {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=ContactPageSearchBar.module.css.map */

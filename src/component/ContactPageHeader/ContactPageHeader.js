@@ -1,5 +1,5 @@
-import contactBookIcon from '../../../assets/Contact-book.svg';
-import Icon from '../../Ui/Icon/Icon';
+import contactBookIcon from '../../assets/Contact-book.svg';
+import Icon from '../Ui/Icon/Icon';
 import classes from './ContactPageHeader.module.css';
 
 const ContactPageHeader = () => {
