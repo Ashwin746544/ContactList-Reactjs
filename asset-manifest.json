@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ContactList-Reactjs/static/css/main.8963615a.css",
-    "main.js": "/ContactList-Reactjs/static/js/main.3b4b4043.js",
+    "main.css": "/ContactList-Reactjs/static/css/main.8dc1e516.css",
+    "main.js": "/ContactList-Reactjs/static/js/main.740c14f4.js",
     "static/js/787.4151f0f6.chunk.js": "/ContactList-Reactjs/static/js/787.4151f0f6.chunk.js",
     "index.html": "/ContactList-Reactjs/index.html",
     "static/media/Contact-book.svg": "/ContactList-Reactjs/static/media/Contact-book.9b5375f75cfc54d5808cec918a87822e.svg",
@@ -11,17 +11,18 @@
     "static/media/chart.svg": "/ContactList-Reactjs/static/media/chart.3acaa8c47f27a5af86ab2dbef54d18fc.svg",
     "static/media/home.svg": "/ContactList-Reactjs/static/media/home.c253cb47ccb9d6dd50ef906cfdfb2fac.svg",
     "static/media/database.svg": "/ContactList-Reactjs/static/media/database.841826b4d125bcb03530a41f0bf28a59.svg",
+    "static/media/delete(white).svg": "/ContactList-Reactjs/static/media/delete(white).bac53cd6a1927dd8946c23eaa7efcc62.svg",
     "static/media/delete.svg": "/ContactList-Reactjs/static/media/delete.44ea9a346d18900efd7864a3713551a3.svg",
     "static/media/edit.svg": "/ContactList-Reactjs/static/media/edit.9dd5caa003a1d3e25b20f1d37e9ba188.svg",
     "static/media/calender.svg": "/ContactList-Reactjs/static/media/calender.4e419cbe68f2307264ee54c8296562d3.svg",
     "static/media/user.svg": "/ContactList-Reactjs/static/media/user.fab65140c8e3728bb3271315c97ba347.svg",
     "static/media/bars.svg": "/ContactList-Reactjs/static/media/bars.f24b22cf8d300a05bb7f2e47c3f62e84.svg",
-    "main.8963615a.css.map": "/ContactList-Reactjs/static/css/main.8963615a.css.map",
-    "main.3b4b4043.js.map": "/ContactList-Reactjs/static/js/main.3b4b4043.js.map",
+    "main.8dc1e516.css.map": "/ContactList-Reactjs/static/css/main.8dc1e516.css.map",
+    "main.740c14f4.js.map": "/ContactList-Reactjs/static/js/main.740c14f4.js.map",
     "787.4151f0f6.chunk.js.map": "/ContactList-Reactjs/static/js/787.4151f0f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8963615a.css",
-    "static/js/main.3b4b4043.js"
+    "static/css/main.8dc1e516.css",
+    "static/js/main.740c14f4.js"
   ]
 }
