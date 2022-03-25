@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ContactList-Reactjs/static/css/main.8963615a.css",
+    "main.js": "/ContactList-Reactjs/static/js/main.3b4b4043.js",
+    "static/js/787.4151f0f6.chunk.js": "/ContactList-Reactjs/static/js/787.4151f0f6.chunk.js",
+    "index.html": "/ContactList-Reactjs/index.html",
+    "static/media/Contact-book.svg": "/ContactList-Reactjs/static/media/Contact-book.9b5375f75cfc54d5808cec918a87822e.svg",
+    "static/media/setting.svg": "/ContactList-Reactjs/static/media/setting.a515347c9fee7d99e56cc60c624655a2.svg",
+    "static/media/search.svg": "/ContactList-Reactjs/static/media/search.c45df18568962a2cba49475a526e6c89.svg",
+    "static/media/clipboard.svg": "/ContactList-Reactjs/static/media/clipboard.6a92902c3dbe0cce4e4b30be8307b606.svg",
+    "static/media/chart.svg": "/ContactList-Reactjs/static/media/chart.3acaa8c47f27a5af86ab2dbef54d18fc.svg",
+    "static/media/home.svg": "/ContactList-Reactjs/static/media/home.c253cb47ccb9d6dd50ef906cfdfb2fac.svg",
+    "static/media/database.svg": "/ContactList-Reactjs/static/media/database.841826b4d125bcb03530a41f0bf28a59.svg",
+    "static/media/delete.svg": "/ContactList-Reactjs/static/media/delete.44ea9a346d18900efd7864a3713551a3.svg",
+    "static/media/edit.svg": "/ContactList-Reactjs/static/media/edit.9dd5caa003a1d3e25b20f1d37e9ba188.svg",
+    "static/media/calender.svg": "/ContactList-Reactjs/static/media/calender.4e419cbe68f2307264ee54c8296562d3.svg",
+    "static/media/user.svg": "/ContactList-Reactjs/static/media/user.fab65140c8e3728bb3271315c97ba347.svg",
+    "static/media/bars.svg": "/ContactList-Reactjs/static/media/bars.f24b22cf8d300a05bb7f2e47c3f62e84.svg",
+    "main.8963615a.css.map": "/ContactList-Reactjs/static/css/main.8963615a.css.map",
+    "main.3b4b4043.js.map": "/ContactList-Reactjs/static/js/main.3b4b4043.js.map",
+    "787.4151f0f6.chunk.js.map": "/ContactList-Reactjs/static/js/787.4151f0f6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8963615a.css",
+    "static/js/main.3b4b4043.js"
+  ]
+}
