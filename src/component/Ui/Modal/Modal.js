@@ -51,20 +51,20 @@ const Modal = (props) => {
     const address = addressRef.current.value.trim();
 
     const nameIsValid = checkValidity('name', name);
-    const emailIsValid = checkValidity('email', email);
+    const emailIsValidWithError = checkValidity('email', email);
     const phoneIsValid = checkValidity('phone', phone);
     const companyIsValid = checkValidity('company', company);
     const roleIsValid = checkValidity('role', role);
     const addressIsValid = checkValidity('address', address);
 
     SetNameState({ ...nameState, value: name, isvalid: nameIsValid });
-    SetEmailState({ ...emailState, value: email, isvalid: emailIsValid });
-    SetPhoneState({ ...phoneState, value: phone, isvalid: emailIsValid });
-    SetCompanyState({ ...companyState, value: company, isvalid: emailIsValid });
-    SetRoleState({ ...roleState, value: role, isvalid: emailIsValid });
-    SetAddressState({ ...addressState, value: address, isvalid: emailIsValid });
+    SetEmailState({ ...emailState, value: email, ...emailIsValidWithError });
+    SetPhoneState({ ...phoneState, value: phone, isvalid: phoneIsValid });
+    SetCompanyState({ ...companyState, value: company, isvalid: companyIsValid });
+    SetRoleState({ ...roleState, value: role, isvalid: roleIsValid });
+    SetAddressState({ ...addressState, value: address, isvalid: addressIsValid });
 
-    if (!nameIsValid || !emailIsValid || !phoneIsValid || !companyIsValid || !roleIsValid || !addressIsValid) {
+    if (!nameIsValid || !emailIsValidWithError.isvalid || !phoneIsValid || !companyIsValid || !roleIsValid || !addressIsValid) {
       return;
     } else {
       const contact = { name: name, email: email, phone: phone, company: company, role: role, address: address };
@@ -93,9 +93,20 @@ const Modal = (props) => {
         return false;
       case "email":
         if (/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(value)) {
-          return true;
+          let isDuplicate = false;
+          for (let contact of props.contacts) {
+            if (contact.email == value) {
+              isDuplicate = true;
+            }
+          }
+          if (isDuplicate) {
+            console.log(" duplicate");
+            return { isvalid: false, errorMessage: 'Email already Exists!' };
+          } else {
+            return { isvalid: true, errorMessage: 'Email is not valid' };
+          }
         }
-        return false;
+        return { isvalid: false, errorMessage: 'Email is not valid' };
       case "phone":
         if (/^[0-9]{10}$/.test(value)) {
           return true;

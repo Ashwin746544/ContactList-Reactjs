@@ -152,6 +152,7 @@ const ContactPage = (props) => {
       contactAdded={addContactHandler}
       contactEdited={editContactHandler}
       selectedContact={selectedContact}
+      contacts={ContactsArray}
     />
     <div className={classes.contactPage}>
       <ContactPageHeader />
